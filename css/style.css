@@ -9,33 +9,9 @@
     scroll-behavior: smooth;
 }
 
-/******************** header logo design ***********************/
-
-header
+section
 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 40px 100px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.5s;
-}
-
-header .logo
-{
-    color: #fff;
-    font-weight: 700;
-    font-size: 2em;
-    text-decoration: none;
-}
-
-header .logo span
-{
-    color: #ff0157;
+    padding: 100px;
 }
 
 /********************** navigation design **************************/
@@ -63,18 +39,53 @@ header .navigation li a:hover
 {
     color: #ff0157 ;
 }
+
 /************************** sticky navigation *******************************/
 
-.sticky
+header.sticky
 {
     background: #fff;
     padding: 10px 100px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.sticky .logo, .sticky .navigation li a
+header.sticky .logo, header.sticky .navigation li a
 {
     color: #111;
+}
+
+header.sticky .navigation li a:hover
+{
+    color: #ff0157;
+}
+
+/******************** header logo design ***********************/
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+header .logo span
+{
+    color: #ff0157;
 }
 
 /************************** banner design ***************************/
@@ -139,11 +150,6 @@ p
 }
 
 /********************** about text design ************************/
-
-.about
-{
-   padding: 100px;
-}
 
 .row
 {
@@ -287,11 +293,6 @@ p
 
 /*********************** expert image design ******************************/
 
-.expert
-{
-    padding: 100px;
-}
-
 .expert .content .box .text
 {
     padding: 15px 0 5px;
@@ -309,7 +310,6 @@ p
 {
     background: url(../images/bg2.jpg);
     background-size: cover;
-    padding: 100px;
 }
 
 /************************** testimonials text design ****************************/
@@ -388,7 +388,6 @@ p
 {
     background: url(../images/bg3.jpg);
     background-size: cover;
-    padding: 100px;
 }
 
 /**************************** contact form design **********************************/
@@ -443,4 +442,160 @@ p
     font-weight: 500;
     border: none;
     cursor: pointer;
+}
+
+/*************************** copyright design*******************************/
+
+.copyrightText
+{
+    padding: 8px 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.copyrightText p
+{
+    color: #333;
+}
+
+.copyrightText a
+{
+    color: #ff0157;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/************************* menu for mobile *******************************/
+
+@media (max-width: 991px)
+{
+    header.sticky, header
+    {
+        padding: 10px 20px;
+    }
+
+    header .navigation li
+    {
+        margin-left:0 ;
+    }
+
+    header .navigation li a
+    {
+        color: #111;
+        font-size: 1.6em;
+    }
+
+    header .navigation
+    {
+        display: none;
+    }
+
+    header .navigation.active
+    {
+        width: 100%;
+        height: calc(100% - 50px);
+        position: fixed;
+        top: 50px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+    }
+    
+    .menuToggle
+    {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(../images/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    header .menuToggle.active
+    {
+        background: url(../images/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .menuToggle
+    {
+        filter: invert(1);
+    }
+
+    section
+    {
+        padding: 20px;
+    }
+
+    .banner .content h2
+    {
+        font-size: 3em;
+        color: #fff;
+    }
+
+    .row
+    {
+        flex-direction: column;
+    }
+
+    .row .col50
+    {
+        position: relative;
+        width: 100%;
+    }
+
+    .row .col50 .imgBx
+    {
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .menu .content
+    {
+        margin-top: 20px;
+    }
+
+    .menu .content .box
+    {
+        margin: 10px;
+    }
+
+    .menu .content .box .imgBx
+    {
+        height: 260px;
+    }
+
+    .title
+    {
+        text-align: center;
+    }
+
+    .titleText
+    {
+        font-size: 1.8em;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .testimonials .content .box
+    {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .contactForm
+    {
+        padding: 35px 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
 }
